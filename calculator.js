@@ -38,13 +38,21 @@ function calculate(expression) {
 
   const tokens = expression.split(' ');
 
-  const num1 = Number(tokens[0]);
-  const operator = tokens[1];
-  const num2 = Number(tokens[2]);
+  if (tokens.length === 3) { 
+    num1 = Number(tokens[0]);
+    operator = tokens[1];
+    num2 = Number(tokens[2]);
   if (Number.isNaN(num1) || Number.isNaN(num2)) {
     alert('Not a number! Try again.');
     return;
-  }
+    }}
+    else if (tokens.length === 2) { 
+      operator = tokens[0];
+      num1 = Number(tokens[1]);
+    if (Number.isNaN(num1)) {
+      alert('Not a number! Try again.');
+      return;
+  }}
 
   if (operator === '+') {
     return add(num1, num2);
