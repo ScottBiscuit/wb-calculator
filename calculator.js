@@ -1,40 +1,69 @@
 //add +
 function add(num1, num2) {
-return num1 + num2 
+return num1 + num2; 
 }
 
 //subtract -
 function subtract(num1, num2) {
-return num1 - num2 
+return num1 - num2; 
 }
 
 //multiply *
 function multiply(num1, num2) {
-return num1 * num2 
+return num1 * num2; 
 }
 
 //divide /
 function divide(num1, num2) {
-return num1 / num2 
+return num1 / num2; 
 }
 
 //power ^ 
 function power(num1, num2) {
-return num1 ** num2 
+return num1 ** num2; 
 }
 
 //mod (remainder) %
 function mod(num1, num2) {
-return num1 + num2 
+return num1 + num2; 
 }
 
 //sqrt sqrt
 function sqrt(num1, num2) {
-return num1 ** 0.5
+return num1 ** 0.5;
 }
 
 
-function calculate(expression) {}
+function calculate(expression) {
+
+  const tokens = expression.split(' ');
+
+  const num1 = tokens[0];
+  const operator = tokens[1];
+  const num2 = tokens[2];
+
+  if (operator === '+') {
+    return add(num1, num2);
+  }
+  if (operator === '-') {
+    return subtract(num1, num2);
+  }
+  if (operator === '*') {
+    return multiply(num1, num2);
+  }
+  if (operator === '/') {
+    return divide(num1, num2);
+  }
+  if (operator === '^') {
+    return power(num1, num2);
+  }
+  if (operator === '%') {
+    return mod(num1, num2);
+  }
+  if (operator === 'sqrt') {
+    return sqrt(num1);
+  }
+}
 
 /* **************** DO NOT EDIT THE CODE BELOW **************** */
 /* ************************************************************ */
