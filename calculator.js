@@ -25,7 +25,7 @@ return num1 ** num2;
 
 //mod (remainder) %
 function mod(num1, num2) {
-return num1 + num2; 
+return num1 % num2; 
 }
 
 //sqrt sqrt
@@ -38,9 +38,13 @@ function calculate(expression) {
 
   const tokens = expression.split(' ');
 
-  const num1 = tokens[0];
+  const num1 = Number(tokens[0]);
   const operator = tokens[1];
-  const num2 = tokens[2];
+  const num2 = Number(tokens[2]);
+  if (Number.isNaN(num1) || Number.isNaN(num2)) {
+    alert('Not a number! Try again.');
+    return;
+  }
 
   if (operator === '+') {
     return add(num1, num2);
