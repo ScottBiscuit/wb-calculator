@@ -29,8 +29,17 @@ return num1 % num2;
 }
 
 //sqrt sqrt
-function sqrt(num1, num2) {
+function sqrt(num1) {
 return num1 ** 0.5;
+}
+
+//factorial
+function factorial(num1) {
+  let result = 1;
+  for (let n = num1; n > 0; n -= 1) {
+    result *= n;
+  }
+  return result;
 }
 
 
@@ -45,14 +54,20 @@ function calculate(expression) {
   if (Number.isNaN(num1) || Number.isNaN(num2)) {
     alert('Not a number! Try again.');
     return;
-    }}
+    }
+  }
     else if (tokens.length === 2) { 
       operator = tokens[0];
       num1 = Number(tokens[1]);
     if (Number.isNaN(num1)) {
       alert('Not a number! Try again.');
       return;
-  }}
+  }
+}
+    else {
+      alert('Invalid expression! Try again.');
+      return;
+    }
 
   if (operator === '+') {
     return add(num1, num2);
@@ -75,6 +90,14 @@ function calculate(expression) {
   if (operator === 'sqrt') {
     return sqrt(num1);
   }
+  if (operator === '!') {
+    if (!Number.isInteger(num1) || num1 < 0) {
+      alert('Factorial is only defined for positive integers');
+      return;
+    }
+    return factorial(num1);
+  }
+  alert('Unrecognized operator.');
 }
 
 /* **************** DO NOT EDIT THE CODE BELOW **************** */
